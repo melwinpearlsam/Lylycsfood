@@ -9,8 +9,6 @@ body {
 	font-family: "Montserrat", sans-serif;
 	display: flex;
 	flex-direction: column;
-	height: 100vh;
-	padding: 8px;
 }
 
 #header h2 {
@@ -20,15 +18,6 @@ body {
 
 #body {
 	flex: 1;
-	margin: 16px 0;
-}
-
-#logout-btn {
-	color: grey;
-	font-weight: bold;
-	border: 2px solid rgb(104, 104, 104);
-	padding: 0px 4px;
-	font-size: 10px;
 }
 
 #no-restaurant-container {
@@ -72,4 +61,33 @@ body {
 	border-top: 2px solid rgb(202, 202, 202);
 	font-weight: bold;
 	color: grey;
+}
+
+.logo {
+	margin: 1px 1px 26px 1px !important;
+
+	height: 80px;
+	box-shadow: 1px 1px 14px 1px rgb(200, 199, 199);
+	padding-left: 15px;
+	display: flex;
+
+	justify-content: center;
+	align-content: center;
+}
+
+.logo img {
+	margin-top: 19px;
+}
+
+#logout-btn {
+	margin-top: 15px;
+	margin-right: 10px;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+	border: solid 1px black;
+	background-color: black;
+	color: white;
+	border-radius: 7px;
+	padding: 8px 25px 0 25px;
 }

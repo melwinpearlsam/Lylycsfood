@@ -12,36 +12,43 @@
 			integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
 			crossorigin="anonymous"
 		/>
+		<link rel="stylesheet" href="/styles/bootstrap.min.css" />
 	</head>
 	<body>
 		<section id="header">
-			<div style="display: flex; justify-content: space-between">
-				<img height="25" src="/assets/logotext.png" alt="logo" />
-				<p id="logout-btn">logout</p>
+			<div class="logo" style="display: flex; justify-content: space-between">
+				<img
+					class="img"
+					src="/assets/logotext.png"
+					height="40px"
+					width="160.41px"
+				/>
+				<p id="logout-btn">Logout</p>
 			</div>
 
-			<h2>Hello, <span style="color: rgb(65, 65, 65)">Prabha</span></h2>
-		</section>
+			<div class="container-sm"><h2>Hello, <span style="color: rgb(65, 65, 65)"></span></h2>
+			</section>
+	
+			<section id="body">
+				<div style="display: flex; justify-content: space-between">
+					<h4 style="color: rgb(143, 143, 143); margin-left: 18px;">Your Restaurants</h4>
+					<p
+						onclick="window.location.href='addrestaurant.html'"
+						style="color: rgb(107, 107, 107); margin-right: 30px; font-weight: bold; border: 1px solid black; border-radius: 7px;padding: 7px 10px;background-color: black;color: white;cursor: pointer;"
 
-		<section id="body">
-			<div style="display: flex; justify-content: space-between">
-				<h4 style="color: rgb(143, 143, 143)">Your Restaurants</h4>
-				<p
-					onclick="window.location.href='addrestaurant.html'"
-					style="color: rgb(107, 107, 107)"
-				>
-					Add <span><i class="fas fa-plus"></i></span>
+					>
+						Add <span><i class="fas fa-plus"></i></span>
+					</p>
+				</div>
+				<div style="height: 16px"></div>
+			</section>
+	
+			<section style="margin: 0 auto" id="footer">
+				<p>
+					&copy; 2021 <span style="color: red">Lylycs.com</span>. All Rights
+					Reserved.
 				</p>
-			</div>
-			<div style="height: 16px"></div>
-		</section>
-
-		<section style="margin: 0 auto" id="footer">
-			<p>
-				&copy; 2021 <span style="color: red">Lylycs.com</span>. All Rights
-				Reserved.
-			</p>
-		</section>
+			</section></div>
 		<script src="/scripts/home.js"></script>
 	</body>
 </html>
