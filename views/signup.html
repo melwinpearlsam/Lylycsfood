@@ -8,29 +8,32 @@
 		<link rel="stylesheet" href="/styles/signup.css" />
 	</head>
 	<body style="padding: 16px">
-		<section id="header">
-			<h1>Lylycs Business Signup</h1>
-			<h6 style="color: grey" id="local-email"></h6>
-			<p style="color: red" id="message-container"></p>
-			<form style="display: flex; flex-direction: column">
-				<input placeholder="username" id="uname" type="text" required />
-				<input
-					placeholder="password"
-					id="password"
-					type="password"
-					pattern=".{6}"
-					required
-					title="minimum length of 6"
-				/>
-				<input type="submit" value="Create Account" id="login-form-submit" />
-			</form>
-		</section>
-		<section id="footer">
-			<p>
-				&copy; 2021 <span style="color: red">Lylycs.com</span>. All Rights
-				Reserved.
-			</p>
-		</section>
+		<div class="container-sm">
+			<section id="header">
+				<h1>Lylycs Business Signup</h1>
+				<h6 style="color: grey" id="local-email"></h6>
+				<p style="color: red" id="message-container"></p>
+				<form style="display: flex; flex-direction: column">
+					<input placeholder="username" id="uname" type="text" required />
+					<input
+						placeholder="password"
+						id="password"
+						type="password"
+						pattern=".{6}"
+						required
+						title="minimum length of 6"
+					/>
+					<input type="submit" value="Create Account" id="login-form-submit" />
+				</form>
+			</section>
+			<section id="footer">
+				<p>
+					&copy; 2021 <span style="color: red">Lylycs.com</span>. All Rights
+					Reserved.
+				</p>
+			</section>
+		</div>
+
 		<script>
 			const email = document.getElementById("local-email");
 			const form = document.getElementById("login-form-submit");
