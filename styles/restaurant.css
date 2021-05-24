@@ -57,3 +57,15 @@ textarea {
 .phone-number-container {
 	margin: 5px;
 }
+
+.logo {
+	margin: 1px 1px 26px 1px !important;
+
+	height: 80px;
+	box-shadow: 1px 1px 14px 1px rgb(200, 199, 199);
+	padding-left: 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+}

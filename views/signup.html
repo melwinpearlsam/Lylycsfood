@@ -68,7 +68,7 @@
 						console.log(r);
 						if (r.token) {
 							localStorage.setItem("token", r.token);
-							window.location.replace("./otpVerification.html");
+							window.location.replace("./home.html");
 						} else {
 							messageContainer.innerHTML = r.message;
 						}

@@ -6,29 +6,66 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Lylycs Business Login</title>
 		<link rel="stylesheet" href="/styles/signup.css" />
+		<link rel="stylesheet" href="/styles/bootstrap.min.css" />
 	</head>
 	<body style="padding: 16px">
-		<section id="header">
-			<h1>Email Verification</h1>
-			<p id="message-container"></p>
-			<form style="display: flex; flex-direction: column">
-				<input
-					id="input-email"
-					value="nethajimessi10@gmail.com"
-					placeholder="email"
-					type="email"
-					required
-				/>
-				<button id="login-form-submit" type="submit">Proceed</button>
-			</form>
-			<p>Already have an account? <a href="./login.html">Login</a></p>
-		</section>
-		<section id="footer">
-			<p style="margin-bottom: 64px">
-				&copy; 2021 <span style="color: red">Lylycs.com</span>. All Rights
-				Reserved.
-			</p>
-		</section>
+		<div class="logo">
+			<img
+				class="img"
+				src="/assets/logotext.png"
+				height="40px"
+				width="160.41px"
+			/>
+		</div>
+		<div class="container-sm">
+			<section id="header">
+				<h1 align="center" style="font-size: 4opx; font-weight: bolder">
+					Email Verification
+				</h1>
+				<p id="message-container"></p>
+				<center>
+					<table>
+						<tr>
+							<td>
+								<form>
+									<input
+										id="input-email"
+										placeholder="email"
+										type="email"
+										required
+									/>
+								</form>
+							</td>
+						</tr>
+					</table>
+				</center>
+				<center>
+					<table>
+						<tr>
+							<td>
+								<form>
+									<button id="login-form-submit" type="submit">Proceed</button>
+								</form>
+							</td>
+						</tr>
+					</table>
+				</center>
+				<center>
+					<p class="dhac">
+						Already have an account? <a href="./login.html">Login</a>
+					</p>
+				</center>
+			</section>
+		</div>
+		<center>
+			<section id="footer">
+				<p style="margin-top: 350px">
+					&copy; 2021 <span style="color: red">Lylycs.com</span>. All Rights
+					Reserved.
+				</p>
+			</section>
+		</center>
+
 		<script>
 			const form = document.getElementById("login-form-submit");
 			const input = document.getElementById("input-email");

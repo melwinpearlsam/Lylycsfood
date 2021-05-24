@@ -17,11 +17,11 @@ input {
 body {
 	display: flex;
 	flex-direction: column;
-	height: 100vh;
 }
 
 #header {
 	flex: 1;
+	margin-top: 10px;
 }
 
 #footer {
@@ -48,10 +48,6 @@ input {
 	border-radius: 7px;
 }
 
-input::selection {
-	border: rgb(190, 189, 189);
-}
-
 .dhac {
 	margin: 20px;
 }
@@ -61,8 +57,6 @@ input::selection {
 
 	height: 80px;
 	box-shadow: 1px 1px 14px 1px rgb(200, 199, 199);
-}
-.logo {
 	padding-left: 15px;
 	display: flex;
 	flex-direction: column;

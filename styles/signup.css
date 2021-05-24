@@ -17,11 +17,11 @@ input {
 body {
 	display: flex;
 	flex-direction: column;
-	height: 100vh;
 }
 
 #header {
 	flex: 1;
+	margin-top: 10px;
 }
 
 #footer {
@@ -29,12 +29,37 @@ body {
 }
 
 #login-form-submit {
-	padding: 7px;
+	padding: 7px 25px;
 	border: none;
-	border-radius: 5px;
+	border-radius: 7px;
 	color: white;
 	font-weight: bold;
-	background-color: #3a3a3a;
+	background-color: black;
 	cursor: pointer;
 	outline: none;
+}
+
+form {
+	margin: 10px;
+}
+
+input {
+	border: solid 1px rgb(200, 199, 199);
+	border-radius: 7px;
+}
+
+.dhac {
+	margin: 20px;
+}
+
+.logo {
+	margin: -15px -15px 10px -15px !important;
+
+	height: 80px;
+	box-shadow: 1px 1px 14px 1px rgb(200, 199, 199);
+	padding-left: 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
 }
