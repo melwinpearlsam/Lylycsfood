@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="/styles/restaurant.css" />
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+			integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="/styles/bootstrap.min.css" />
+		<style>
+			#upload-dp-image {
+				display: none;
+			}
+			.upload-dp-image {
+				border: 1px solid #ccc;
+				display: inline-block;
+				padding: 6px 12px;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<section id="header">
+			<img
+				height="150px"
+				width="100%"
+				id="restaurantImage"
+				src=""
+				alt="restaurant img"
+			/>
+			<div>
+				<label
+					style="color: rgb(87, 87, 87)"
+					for="upload-dp-image"
+					class="upload-dp-image"
+				>
+					<i class="fas fa-pen"></i> Update Image</label
+				>
+				<input
+					id="upload-dp-image"
+					type="file"
+					onChange="handleDisplayUpload()"
+				/>
+			</div>
+		</section>
+		<div class="container-sm con">
+			<section id="body">
+				<h1 class="title"></h1>
+				<form action="/action_page.php">
+					<div>
+						<label for="fname">Restaurant name</label><br />
+						<input
+							type="text"
+							id="rname"
+							name="rname"
+							placeholder="Restaurant name"
+						/><br />
+					</div>
+
+					<div>
+						<label for="fname">About</label><br />
+						<textarea
+							name="about"
+							id="about"
+							placeholder="About"
+							cols="22.5"
+							rows="5"
+						></textarea>
+					</div>
+					<div class="site">
+						<label for="websiteurl"></label>Website URL<br />
+						<input
+							type="url"
+							id="websiteurl"
+							name="websiteurl"
+							placeholder="www.yourwebsite.com"
+						/><br />
+					</div>
+					<div class="mail">
+						<label for="email"></label>Email<br />
+						<input
+							type="text"
+							id="email"
+							name="email"
+							placeholder="owner@5starparadise.com"
+						/><br />
+					</div>
+					<input type="submit" value="Update Info" id="submitbtn" />
+					<hr />
+
+					<div class="phone-bar">
+						<label for="phone"></label>Add new number<br />
+						<input
+							type="number"
+							id="phone"
+							name="phone"
+							placeholder="Eg: +91 9876543210"
+							required
+						/><br />
+						<button id="phone-add-btn">Update Number</button>
+						<br />
+						<div class="phone-number-container">
+							<h6>Phone number added:</h6>
+						</div>
+						<br />
+					</div>
+					<hr />
+					<div>
+						<h6>Images of restaurant ( Double Tap to delete )</h6>
+						<div class="images-container"></div>
+						<label for="upload-image">Add Image</label><br />
+						<input
+							id="upload-image"
+							type="file"
+							onChange="handleImageUpload()"
+						/><br />
+						<img id="display-image" height="100px" src="" />
+						<button type="button" style="display: none" class="images-add-btn">
+							Add Image <br />
+						</button>
+					</div>
+					<hr />
+
+					<div>
+						<div class="address-container">
+							<div>
+								<label for="addressLine1"></label>Address Line 1<br />
+								<input
+									type="url"
+									id="addressLine1"
+									name="addressLine1"
+									placeholder="17/52, TitanTownship"
+								/><br />
+							</div>
+							<div>
+								<label for="addressLine2"></label>Address Line 2<br />
+								<input
+									type="text"
+									id="addressLine2"
+									name="addressLine2"
+									placeholder="Mathigiri"
+								/><br />
+							</div>
+							<div>
+								<label for="locality"></label>Locality<br />
+								<input
+									type="text"
+									id="locality"
+									name="locality"
+									placeholder="Mathigiri"
+								/><br />
+							</div>
+							<div>
+								<label for="city"></label>City<br />
+								<input
+									type="text"
+									id="city"
+									name="city"
+									placeholder="Hosur"
+								/><br />
+							</div>
+							<div>
+								<label for="zipcode"></label>Zipcode<br />
+								<input
+									type="text"
+									id="zipcode"
+									name="zipcode"
+									placeholder="Tamil Nadu"
+								/><br />
+							</div>
+							<div>
+								<label for="state"></label>State<br />
+								<input
+									type="text"
+									id="state"
+									name="state"
+									placeholder="Tamil Nadu"
+								/><br />
+							</div>
+						</div>
+						<button type="button" id="updateaddress-btn">Update Address</button>
+
+						<p>Updates exact location in maps</p>
+						<p id="updatelocation-msg" style="color: red; font-size: 10px"></p>
+						<button type="button" id="updatelocation-btn">
+							Update Location
+							<i class="fas fa-map-marker-alt"></i>
+						</button>
+					</div>
+				</form>
+			</section>
+		</div>
+
+		<script src="/scripts/restaurant.js"></script>
+	</body>
+</html>

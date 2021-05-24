@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Lylycs Business Login</title>
+		<link rel="stylesheet" href="/styles/signup.css" />
+	</head>
+	<body style="padding: 16px">
+		<section id="header">
+			<h1>OTP Verification</h1>
+			<h6 style="color: grey" id="local-email"></h6>
+			<p style="color: red" id="message-container"></p>
+			<form style="display: flex; flex-direction: column">
+				<input
+					placeholder="otp"
+					type="number"
+					id="input-otp"
+					pattern="^[0-9]$"
+					required
+				/>
+				<input type="submit" value="Verify OTP" id="login-form-submit" />
+			</form>
+			<p style="color: blue" id="resend-otp">Resend OTP</p>
+		</section>
+	</body>
+	<script>
+		const email = document.getElementById("local-email");
+		const form = document.getElementById("login-form-submit");
+		const input = document.getElementById("input-otp");
+		const messageContainer = document.getElementById("message-container");
+		const resend = document.getElementById("resend-otp");
+		emailValue = localStorage.getItem("email");
+		email.innerHTML = emailValue;
+
+		form.addEventListener("click", (e) => {
+			if (!input.checkValidity()) {
+				return (messageContainer.innerHTML = input.validationMessage);
+			}
+			e.preventDefault();
+			messageContainer.innerHTML = "loading...";
+			fetch("https://lylycsfood.herokuapp.com/service/mail/checkotp", {
+				method: "post",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					email: emailValue,
+					otp: input.value,
+				}),
+			})
+				.then((r) => r.json())
+				.then((r) => {
+					console.log(r);
+					if (r.status) {
+						localStorage.setItem("otp", input.value);
+						window.location.replace("./signup.html");
+					} else if (r.message.includes("expired")) {
+						messageContainer.innerHTML =
+							"OTP has expired, click Resend OTP, and try again.";
+					} else {
+						messageContainer.innerHTML = r.message;
+					}
+				});
+		});
+
+		resend.addEventListener("click", (e) => {
+			messageContainer.innerHTML = "loading...";
+			fetch("https://lylycsfood.herokuapp.com/service/mail/sendotp", {
+				method: "post",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					email: emailValue,
+					type: "restaurant",
+				}),
+			})
+				.then((r) => r.json())
+				.then((r) => {
+					if (r.message.includes("code has been")) {
+						messageContainer.innerHTML = "OTP has been resent.";
+					} else {
+						alert("Some error has occured " + r.message);
+					}
+				});
+		});
+	</script>
+</html>

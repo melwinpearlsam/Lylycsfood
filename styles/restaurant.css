@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500;800&display=swap");
+
+.upload-dp-image {
+	border: solid 1px rgb(200, 199, 199);
+	border-radius: 7px;
+}
+.title {
+	font-size: 30px;
+	font-weight: bolder;
+	margin: 20px 0px;
+}
+
+input,
+textarea {
+	border: solid 1px rgb(200, 199, 199);
+	border-radius: 7px;
+	padding: 5px 20px;
+}
+
+textarea {
+	resize: none;
+}
+
+#websiteurl,
+#email,
+#phone,
+#addressLine1,
+#addressLine2,
+#locality,
+#city,
+#state,
+#zipcode {
+	margin: 10px 0;
+}
+
+#submitbtn {
+	background-color: black;
+	color: white;
+	font-weight: bold;
+	margin: 0 0 10px 0;
+}
+
+#phone-add-btn,
+#updatelocation-btn,
+#updateaddress-btn,
+#upload-image .images-add-btn {
+	margin: 5px;
+	border: solid 1px rgb(200, 199, 199);
+	border-radius: 7px;
+	padding: 5px 20px;
+	background-color: black;
+	color: white;
+	font-weight: bold;
+	margin: 0 0 10px 0;
+}
+
+.phone-number-container {
+	margin: 5px;
+}

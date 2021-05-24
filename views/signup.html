@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Lylycs Business Login</title>
+		<link rel="stylesheet" href="/styles/signup.css" />
+	</head>
+	<body style="padding: 16px">
+		<section id="header">
+			<h1>Lylycs Business Signup</h1>
+			<h6 style="color: grey" id="local-email"></h6>
+			<p style="color: red" id="message-container"></p>
+			<form style="display: flex; flex-direction: column">
+				<input placeholder="username" id="uname" type="text" required />
+				<input
+					placeholder="password"
+					id="password"
+					type="password"
+					pattern=".{6}"
+					required
+					title="minimum length of 6"
+				/>
+				<input type="submit" value="Create Account" id="login-form-submit" />
+			</form>
+		</section>
+		<section id="footer">
+			<p>
+				&copy; 2021 <span style="color: red">Lylycs.com</span>. All Rights
+				Reserved.
+			</p>
+		</section>
+		<script>
+			const email = document.getElementById("local-email");
+			const form = document.getElementById("login-form-submit");
+			const uinput = document.getElementById("uname");
+			const pinput = document.getElementById("password");
+			const otpValue = localStorage.getItem("otp");
+			const emailValue = localStorage.getItem("email");
+			const messageContainer = document.getElementById("message-container");
+			email.innerHTML = emailValue;
+
+			form.addEventListener("click", (e) => {
+				if (!uinput.checkValidity() || !pinput.checkValidity()) {
+					return (messageContainer.innerHTML =
+						uinput.validationMessage + "\n" + pinput.validationMessage);
+				}
+				e.preventDefault();
+				messageContainer.innerHTML = "loading...";
+				fetch("https://lylycsfood.herokuapp.com/v1/restaurant/owner", {
+					method: "post",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({
+						username: uinput.value,
+						password: pinput.value,
+						email: emailValue,
+						otp: parseInt(otpValue),
+					}),
+				})
+					.then((r) => r.json())
+					.then((r) => {
+						console.log(r);
+						if (r.token) {
+							localStorage.setItem("token", r.token);
+							window.location.replace("./otpVerification.html");
+						} else {
+							messageContainer.innerHTML = r.message;
+						}
+					});
+			});
+		</script>
+	</body>
+</html>
