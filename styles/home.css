@@ -75,19 +75,12 @@ body {
 	align-content: center;
 }
 
-.logo img {
-	margin-top: 19px;
-}
-
 #logout-btn {
-	margin-top: 15px;
-	margin-right: 10px;
-	font-size: 16px;
-	font-weight: bold;
-	cursor: pointer;
-	border: solid 1px black;
 	background-color: black;
+	padding: 7px;
 	color: white;
+	margin: 10px;
 	border-radius: 7px;
-	padding: 8px 25px 0 25px;
+	font-weight: bold;
+	border: 1px solid black;
 }

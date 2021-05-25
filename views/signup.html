@@ -6,14 +6,34 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Lylycs Business Login</title>
 		<link rel="stylesheet" href="/styles/signup.css" />
+		<link rel="stylesheet" href="/styles/bootstrap.min.css" />
 	</head>
 	<body style="padding: 16px">
+		<div class="logo">
+			<img
+				class="img"
+				src="/assets/logotext.png"
+				height="40px"
+				width="160.41px"
+			/>
+		</div>
+
 		<div class="container-sm">
 			<section id="header">
-				<h1>Lylycs Business Signup</h1>
-				<h6 style="color: grey" id="local-email"></h6>
-				<p style="color: red" id="message-container"></p>
-				<form style="display: flex; flex-direction: column">
+				<h1 align="center" style="font-size: 40px; font-weight: bolder">
+					Lylycs Business Signup
+				</h1>
+				<center>
+					<table>
+						<tr>
+							<td>
+								<h6 style="color: grey" id="local-email"></h6>
+								<p style="color: red" id="message-container"></p>
+							</td>
+						</tr>
+					</table>
+				</center>
+				<center><table><tr><td><form style="display: flex; flex-direction: column">
 					<input placeholder="username" id="uname" type="text" required />
 					<input
 						placeholder="password"
@@ -22,16 +42,20 @@
 						pattern=".{6}"
 						required
 						title="minimum length of 6"
-					/>
-					<input type="submit" value="Create Account" id="login-form-submit" />
-				</form>
-			</section>
-			<section id="footer">
-				<p>
-					&copy; 2021 <span style="color: red">Lylycs.com</span>. All Rights
-					Reserved.
-				</p>
-			</section>
+					/></td></tr></table></form></center>
+
+					<center><table><tr><td><form><input type="submit" value="Create Account" id="login-form-submit" /></form></td></tr></table></center>
+				
+					
+				</section>
+					<section id="footer" style="margin-top: 350px;">
+						<center><p>
+							&copy; 2021 <span style="color: red; ">Lylycs.com</span>. All Rights
+							Reserved.
+						</p></center>
+						
+					</section>
+			
 		</div>
 
 		<script>
