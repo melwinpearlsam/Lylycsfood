@@ -6,24 +6,76 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Lylycs Business Login</title>
 		<link rel="stylesheet" href="/styles/signup.css" />
+		<link rel="stylesheet" href="/styles/bootstrap.min.css" />
 	</head>
 	<body style="padding: 16px">
-		<section id="header">
-			<h1>OTP Verification</h1>
-			<h6 style="color: grey" id="local-email"></h6>
-			<p style="color: red" id="message-container"></p>
-			<form style="display: flex; flex-direction: column">
-				<input
-					placeholder="otp"
-					type="number"
-					id="input-otp"
-					pattern="^[0-9]$"
-					required
-				/>
-				<input type="submit" value="Verify OTP" id="login-form-submit" />
-			</form>
-			<p style="color: blue" id="resend-otp">Resend OTP</p>
-		</section>
+		<div class="logo">
+			<img
+				class="img"
+				src="/assets/logotext.png"
+				height="40px"
+				width="160.41px"
+			/>
+		</div>
+		<div class="container-sm">
+			<section id="header">
+				<h1 align="center" style="font-size: 4opx; font-weight: bolder">
+					OTP Verification
+				</h1>
+				<center>
+					<table>
+						<tr>
+							<td>
+								<h6 style="color: grey" id="local-email"></h6>
+								<p style="color: red" id="message-container"></p>
+							</td>
+						</tr>
+					</table>
+				</center>
+				<center>
+					<table>
+						<tr>
+							<td>
+								<form>
+									<input
+										placeholder="otp"
+										type="number"
+										id="input-otp"
+										pattern="^[0-9]$"
+										required
+									/>
+								</form>
+							</td>
+						</tr>
+					</table>
+				</center>
+				<center>
+					<table>
+						<tr>
+							<td>
+								<form>
+									<input
+										type="submit"
+										value="Verify OTP"
+										id="login-form-submit"
+									/>
+								</form>
+							</td>
+						</tr>
+					</table>
+				</center>
+				<center>
+					<span
+						align="center"
+						class="dhac"
+						style="color: blue; cursor: pointer"
+						id="resend-otp"
+					>
+						Resend OTP
+					</span>
+				</center>
+			</section>
+		</div>
 	</body>
 	<script>
 		const email = document.getElementById("local-email");

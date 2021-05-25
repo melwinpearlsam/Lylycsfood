@@ -12,61 +12,69 @@
 			integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
 			crossorigin="anonymous"
 		/>
-		<style>
-			body {
-				padding: 8px;
-			}
-		</style>
+		<link rel="stylesheet" href="/styles/bootstrap.min.css" />
 	</head>
 	<body>
-		<h1 class="title">Add new restaurant</h1>
-		<form>
-			<div>
-				<label for="fname">Restaurant name</label><br />
-				<input
-					type="text"
-					id="rname"
-					name="rname"
-					placeholder="Restaurant name"
-					required
-				/><br />
-			</div>
+		<div class="logo">
+			<img
+				class="img"
+				src="/assets/logotext.png"
+				height="40px"
+				width="160.41px"
+			/>
+		</div>
+		<div class="container-sm">
+			<h1 class="title">Add new restaurant</h1>
+			<form>
+				<div>
+					<label for="fname">Restaurant name</label><br />
+					<input
+						type="text"
+						id="rname"
+						name="rname"
+						placeholder="Restaurant name"
+						required
+					/><br />
+				</div>
 
-			<div>
-				<label for="fname">About</label><br />
-				<textarea
-					name="about"
-					id="about"
-					cols="30"
-					rows="10"
-					placeholder="About"
-					required
-				></textarea>
-			</div>
-			<div>
-				<label for="email"></label>Email<br />
-				<input
-					type="text"
-					id="email"
-					name="email"
-					placeholder="owner@5starparadise.com"
-					required
-				/><br />
-			</div>
+				<div>
+					<label for="fname">About</label><br />
+					<textarea
+						name="about"
+						id="about"
+						cols="30"
+						rows="10"
+						placeholder="About"
+						required
+					></textarea>
+				</div>
+				<hr />
+				<div>
+					<label for="email"></label>Email<br />
+					<input
+						type="text"
+						id="email"
+						name="email"
+						placeholder="owner@5starparadise.com"
+						required
+					/><br />
+				</div>
 
-			<div>
-				<p>Get position for maps</p>
-				<p id="updatelocation-msg" style="color: red; font-size: 10px">
-					no location added
-				</p>
-				<div style="padding: 8px" id="mapholder"></div>
-				<button type="button" id="updatelocation-btn">
-					Update Location
-					<i class="fas fa-map-marker-alt"></i>
-				</button>
-			</div>
-			<input type="submit" value="Create Restaurant" id="submitbtn" />
-		</form>
+				<div>
+					<p>Get position for maps</p>
+					<p id="updatelocation-msg" style="color: red; font-size: 10px">
+						no location added
+					</p>
+					<div style="padding: 8px" id="mapholder"></div>
+					<button type="button" id="updatelocation-btn">
+						Update Location
+						<i class="fas fa-map-marker-alt"></i>
+					</button>
+				</div>
+				<input type="submit" value="Create Restaurant" id="submitbtn" />
+			</form>
+		</div>
+
 		<script
 			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgO-lggOCRT_FH-Fme6cKk0E1WOY-vcFI&libraries=&v=weekly"
 			async
